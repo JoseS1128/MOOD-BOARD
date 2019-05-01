@@ -53,8 +53,15 @@ var disapointedPics = [
 
 
 
-
-
+function kewl(imagevalue, message, Bcolor){
+    $(".mood").val('');
+    $(".image").empty();
+    imagevalue.forEach(function(happymood){
+    $(".image").append("<img src=" + happymood + ">");
+    });
+    $(".message").html(message);
+    $("body").css("background-color", Bcolor);
+    }
 
 
 
@@ -62,40 +69,16 @@ var disapointedPics = [
 
 
 function happy(){
-    $(".mood").val('');
-    $(".image").empty();
-    happyPics.forEach(function(happymood){
-    $(".image").append("<img src=" + happymood + ">");
-    });
-    $(".message").html("You Are A Happy Boi");
-    $("body").css("background-color", "gold");
+    kewl(happyPics, "You Are A Happy Boi", "gold");
     }
 function sad(){
-    $(".mood").val('');
-    $(".image").empty();
-    sadPics.forEach(function(sadmood){
-    $(".image").append("<img src=" + sadmood + ">");
-    });
-    $(".message").html("Aww, You are sad");
-       $("body").css("background-color", "#4b0082");
+    kewl(sadPics, "Aww, You are sad", "#4b0082");
     }
 function angry(){
-    $(".image").empty();
-    $(".mood").val('');
-    angeryPics.forEach(function(angerymood){
-    $(".image").append("<img src=" + angerymood + ">");
-    });
-    $(".message").html("Y I K E S, calm down there buddy");
-    $("body").css("background-color", "red");
+       kewl(angeryPics, "Y I K E S, calm down there buddy", "red");
     }
 function dissapointed(){
-    $(".image").empty();
-    $(".mood").val('');
-    disapointedPics.forEach(function(disapointedmood){
-    $(".image").append("<img src=" + disapointedmood + ">");
-    });
-    $(".message").html("It will get better soon");
-         $("body").css("background-color", "indigo");
+      kewl(disapointedPics, "It will get better soon", "indigo");
     }
 function jimmy(){
     $(".image").empty();
